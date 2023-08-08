@@ -44,14 +44,7 @@ class Notes:
                 result.append(note)
         return result
     
-    def search_note_edit(self, word: str) -> dict[str,str,str]:
-        result: list[dict[str,str,str]] = []
-        for note in self._notes:
-            if word.lower() in note['text'].lower() or word in note['id'] or word in note['date']:
-                result.append(note)
-        return result
-    
-    def search_note_edit_id(self, word: str) -> dict[str,str,str]:
+    def search_note_id(self, word: str) -> dict[str,str,str]:
         result: list[dict[str,str,str]] = []
         for note in self._notes:
             if word in note['id']:
@@ -66,6 +59,14 @@ class Notes:
                 new_date = datetime.datetime.today().strftime("%d/%m/%Y - %H:%M")
                 note['date'] = str(new_date)
                 return note.get('title')
+            
+    def delete_note(self, index: int) -> str:
+        for note in self._notes:
+            if index == note.get('id'):
+                title = note.get('title')
+                self._notes.remove(note)
+                return title
+
             
             
     
