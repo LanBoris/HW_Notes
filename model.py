@@ -51,7 +51,14 @@ class Notes:
                 result.append(note)
         return result
     
-    def edit_note_all(self,new: dict, index: int) -> str:
+    def search_note_edit_id(self, word: str) -> dict[str,str,str]:
+        result: list[dict[str,str,str]] = []
+        for note in self._notes:
+            if word in note['id']:
+                result.append(note)
+        return result
+    
+    def edit_note(self,new: dict, index: int) -> str:
         for note in self._notes:
             if index == note.get('id'):
                 note['title'] = new.get('title', note.get('title'))
@@ -60,17 +67,6 @@ class Notes:
                 note['date'] = str(new_date)
                 return note.get('title')
             
-    def edit_note_title(self, new: dict, index: int) -> str:
-        for note in self._notes:
-            if index == note.get('id'):
-                note['title'] = new.get('title', note.get('title'))
-                return note.get('title')
-            
-    def edit_note_text(self, new: dict, index: int) -> str:
-        for note in self._notes:
-            if index == note.get('id'):
-                note['text'] = new.get('text', note.get('text'))
-                return note.get('text')
             
     
             

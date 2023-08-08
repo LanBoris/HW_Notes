@@ -30,14 +30,5 @@ def print_notes(notes: list[dict[str,str,str]], error: str):
     else:
       print_message(error)
 
-def print_notes_edit(notes: list[dict[str,str,str]], error: str):
-    if notes:
-        print('\n' + '-'*80)
-        for note in notes:
-            print(f'{note.get("id"):>3}. {note.get("title"):<10} ; {note.get("date"):^10} ; {note.get("text")}')
-        print('-'*80 + '\n')
-    else:
-      print_message(error)
-
 def input_search(message) -> str:
     return input(message)

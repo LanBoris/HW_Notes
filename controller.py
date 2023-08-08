@@ -29,14 +29,14 @@ def start():
                 if result:
                     if len(result) != 1:
                         current_id = view.input_search(text.input_search_id)
-                        result = my_notes.search_note_edit(current_id)
-                        view.print_notes_edit(result, text.id_not_found)
+                        result = my_notes.search_note_edit_id(current_id)
+                        view.print_notes(result, text.id_not_found)
                     else:
                         current_id = result[0].get('id')
                     for id in result:
                         if id.get('id') == current_id:
                             new_note = view.input_note(text.change_note)
-                            note = my_notes.edit_note_all(new_note, current_id)
+                            note = my_notes.edit_note(new_note, current_id)
                             view.print_message(text.edit_note_succes(note))
                 else:
                     view.print_message(text.not_found)
