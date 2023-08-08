@@ -11,6 +11,10 @@ main_menu = '''Главное меню:
 
 input_choice = '''Введите номер команды меню: '''
 
+wrong_choice = 'Такого номера нет'
+
+wrong_char = 'Вы ввели не число'
+
 empty_notebook = '''Списко заметок пуст'''
 
 input_new_note = 'Новая заметка:'

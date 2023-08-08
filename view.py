@@ -4,8 +4,15 @@ def main_menu() -> int:
     print(text.main_menu)
     while True:
         choice = input(text.input_choice)
-        if choice.isdigit and 0 < int(choice) < 8:
-            return int(choice)
+        if choice.isdigit():
+            if 0 < int(choice) < 8:
+                return int(choice)
+            else: 
+                print_message(text.wrong_choice)
+                choice = input(text.input_choice)
+                return int(choice)
+        else: 
+            print_message(text.wrong_char)
         
 def print_message(message):
    print('\n' + '-'*len(message))
