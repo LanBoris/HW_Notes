@@ -16,6 +16,7 @@ def start():
                 title = my_notes.create_note(note)
                 view.print_message(text.new_note_succes_create(title))
             case 2:
+                my_notes.new_ids()
                 my_notes.save_notes()
                 view.print_message(text.save_note())
             case 3:
@@ -57,6 +58,7 @@ def start():
                             view.print_message(text.delete_note_succes(note))
                 else:
                     view.print_message(text.not_found)
+                my_notes.new_ids()
             case 6:
                 notes = my_notes.show_notes()
                 view.print_notes(notes, text.empty_notebook)

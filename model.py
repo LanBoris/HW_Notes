@@ -66,6 +66,13 @@ class Notes:
                 title = note.get('title')
                 self._notes.remove(note)
                 return title
+            
+    def new_ids(self):
+        new_id = 0
+        for note in self._notes:
+            new_id = new_id + 1
+            note['id'] = str(new_id)
+        return self._notes
 
             
             
