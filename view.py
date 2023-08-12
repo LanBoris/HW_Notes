@@ -5,7 +5,7 @@ def main_menu() -> int:
     while True:
         choice = input(text.input_choice)
         if choice.isdigit():
-            if 0 < int(choice) < 8:
+            if 0 < int(choice) < 9:
                 return int(choice)
             else: 
                 print_message(text.wrong_choice)

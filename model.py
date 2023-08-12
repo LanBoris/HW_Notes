@@ -15,7 +15,15 @@ class Notes:
         self._last_id += 1
         return new.get('title')
     
-    def save_notes(self):
+    def save_note(self):
+        data = []
+        for note in self._notes:
+            data.append(';'.join([note['id'], note['date'], note['title'], note['text']]))
+        data = '\n'.join(data)
+        with open(self._path, 'w', encoding='utf-8') as file:
+            file.write(data)
+
+    def save_to_file(self):
         data = []
         for note in self._notes:
             data.append(';'.join([note['id'], note['date'], note['title'], note['text']]))

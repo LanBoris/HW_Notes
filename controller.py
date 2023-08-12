@@ -17,7 +17,7 @@ def start():
                 view.print_message(text.new_note_succes_create(title))
             case 2:
                 my_notes.new_ids()
-                my_notes.save_notes()
+                my_notes.save_note()
                 view.print_message(text.save_note())
             case 3:
                 word = view.input_search(text.input_search)
@@ -63,5 +63,9 @@ def start():
                 notes = my_notes.show_notes()
                 view.print_notes(notes, text.empty_notebook)
             case 7:
+                my_notes.new_ids()
+                my_notes.save_to_file()
+                view.print_message(text.save_notes())
+            case 8:
                 break
             
