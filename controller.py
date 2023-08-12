@@ -18,7 +18,7 @@ def start():
             case 2:
                 my_notes.new_ids()
                 my_notes.save_note()
-                view.print_message(text.save_note())
+                view.print_message(text.save_note(title))
             case 3:
                 word = view.input_search(text.input_search)
                 result = my_notes.search_note(word)

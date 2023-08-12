@@ -1,5 +1,6 @@
 import text
 
+# Метод работы с главным меню
 def main_menu() -> int:
     print(text.main_menu)
     while True:
@@ -13,12 +14,14 @@ def main_menu() -> int:
                 return int(choice)
         else: 
             print_message(text.wrong_char)
-        
+
+# Метод печати сообщения        
 def print_message(message):
    print('\n' + '-'*len(message))
    print(message)
    print('-'*len(message) + '\n')
 
+# Метод ввода заметки через консоль
 def input_note(message) -> dict[str,str,str]:
     new = {}
     print_message(message)
@@ -28,6 +31,7 @@ def input_note(message) -> dict[str,str,str]:
             new[key] = value
     return new
 
+# Метод печати заметки в консоль
 def print_notes(notes: list[dict[str,str,str]], error: str):
     if notes:
         print('\n' + '-'*80)
@@ -37,5 +41,6 @@ def print_notes(notes: list[dict[str,str,str]], error: str):
     else:
       print_message(error)
 
+# Метод ввода данных для поиска
 def input_search(message) -> str:
     return input(message)

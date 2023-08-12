@@ -51,9 +51,9 @@ def edit_note_succes(title: str) -> str:
 def load_note(title: str) -> str:
     return f'Заметка {title}:'
 
-def save_note() -> str:
-    return f'Заметка сохранена'
+def save_note(title: str) -> str:
+    return f'Заметка {title} сохранена'
 
 def save_notes() -> str:
-    return f'Заметки сохранены'
+    return f'Заметки сохранены в файл'
 
